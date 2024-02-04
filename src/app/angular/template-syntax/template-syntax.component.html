@@ -1,0 +1,91 @@
+<div>
+    <h1>Property binding</h1>
+    <mat-divider></mat-divider>
+    <div class="p-6">
+        <h3> an element property to a component property value: [src]="imgUrl"</h3>
+        <img alt="logo" class="h-[26px]" [src]="imgUrl">
+    </div>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <div>
+            <h3>use property binding using colSpan: [colSpan]="1 + 1"</h3>
+            <table class="text-center">
+                <thead>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                </thead>
+                <tbody>
+                    <tr class="border-gray-700 border-dotted border-2 p-1 w-20">
+                        <td [colSpan]="1 + 1">A</td>
+                        <!-- <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td> -->
+                        <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <h3>bind the disabled DOM attribute to a Boolean property in the
+            class: [disabled]="isUnchanged" isUnchanged = true;</h3>
+        <button mat-raised-button color="primary" [disabled]="isUnchanged">isUnchanged</button>
+        <button mat-raised-button>Primary</button>
+    </div>
+    <mat-divider></mat-divider>
+</div>
+<div class="pt-6">
+    <h1>Attribute binding</h1>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <h3>bind to an ARIA attribute: [attr.aria-label]="actionName"</h3>
+        <button mat-raised-button [attr.aria-label]="actionName">{{ actionName }} with Aria</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <div>
+            <h3>Binding to colspan: [attr.colspan]="1 + 1"</h3>
+            <table class="text-center">
+                <thead>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                </thead>
+                <tbody>
+                    <tr class="border-gray-700 border-dotted border-2 p-1 w-20">
+                        <td [attr.colspan]="1 + 1">A</td>
+                        <!-- <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td> -->
+                        <td class="border-gray-700 border-dotted border-2 p-1 w-20">A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+</div>
+<section class="pt-6">
+    <h1>Two-way binding</h1>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <app-sizer [(size)]="fontSizePx"></app-sizer>
+        <div class="pt-3">
+            <label for="font-size">FontSize (px): <input id="font-size" class="border-2"
+                    [(ngModel)]="fontSizePx"></label>
+        </div>
+    </div>
+    <div class="p-6 justify-start">
+        <h2>De-sugared two-way binding</h2>
+        <app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+    </div>
+    <mat-divider></mat-divider>
+</section>
+<section class="pt-6">
+    <h1>SVG Template</h1>
+    <mat-divider></mat-divider>
+    <div class="p-6 justify-start">
+        <app-svg></app-svg>
+    </div>
+    <mat-divider></mat-divider>
+</section>
+
+<!--  -->

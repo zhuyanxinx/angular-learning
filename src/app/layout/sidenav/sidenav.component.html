@@ -1,0 +1,22 @@
+<mat-sidenav-container class="relative">
+    <mat-sidenav class="w-[200px] overflow-auto" mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['autocomplete']">Autocomplete</a>
+            <a mat-list-item [routerLink]="['template-syntax']">Template Syntax</a>
+            <a mat-list-item [routerLink]="['directives']">Directives</a>
+
+            <a mat-list-item><span class="font-bold">A</span></a>
+            <a mat-list-item routerLink=".">a.1</a>
+            <a mat-list-item routerLink=".">a.2</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="">
+        <mat-card class="min-h-screen w-full align-middle p-8">
+            <mat-card-header>
+            </mat-card-header>
+            <mat-card-content>
+                <router-outlet></router-outlet>
+            </mat-card-content>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>
